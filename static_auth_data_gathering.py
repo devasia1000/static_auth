@@ -4,7 +4,7 @@ import signal
 import sys
 import pickle
 
-sample_number = 0
+sample_number = 1
 curr_str = ''
 
 current_milli_time = lambda: int(round(time.time() * 1000))
@@ -39,12 +39,12 @@ def kb_up_event(event):
 
         if curr_str == 'passwordspace':
             print curr_str
-            del up_events[0]
+            #del up_events[0]
             data = dict()
             data['key_down_events'] = down_events
             data['key_up_events'] = up_events
             print data
-            pickle.dump(data, open('sample_' + str(sample_number) + '.pickle', 'wb')) 
+            pickle.dump(data, open('sample_steve_' + str(sample_number) + '.pickle', 'wb')) 
             #sys.exit(0)
             print 'Saved to sample', sample_number
             sample_number = sample_number + 1
